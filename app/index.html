@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#13101f">
+  <title>Vice Afterglow — GTA VI Trophy Guide</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <svg class="symbols" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="cup" viewBox="0 0 24 24"><path d="M8 4h8v6a4 4 0 0 1-8 0V4Zm0 2H4v2a4 4 0 0 0 4 4m8-6h4v2a4 4 0 0 1-4 4m-4 2v5m-4 1h8"/></symbol>
+    <symbol id="search-icon" viewBox="0 0 24 24"><circle cx="10" cy="10" r="5.5"/><path d="m14 14 5 5"/></symbol>
+    <symbol id="lock" viewBox="0 0 24 24"><rect x="6" y="10" width="12" height="10" rx="2"/><path d="M9 10V7a3 3 0 0 1 6 0v3m-3 4v2"/></symbol>
+  </svg>
+  <header class="mast">
+    <a class="brand" href="./" aria-label="Vice Afterglow home"><span class="emblem"><svg aria-hidden="true"><use href="#cup"/></svg></span> VICE<span>AFTERGLOW</span></a>
+    <nav aria-label="Sections"><a href="#checklist">Checklist</a><a href="#roadmap">Roadmap</a></nav>
+    <label class="spoiler"><input id="spoilers" type="checkbox" checked><span class="switch"></span> Hide spoilers</label>
+  </header>
+  <main class="shell">
+    <section class="hero" aria-labelledby="title">
+      <div class="scenery" aria-hidden="true"><div class="sun"></div><div class="hills"></div><div class="city"></div><div class="water"></div><div class="palm palm-one"></div><div class="palm palm-two"></div></div>
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> GRAND THEFT AUTO VI / PS5</p>
+        <h1 id="title">The road to<br><em>Platinum.</em></h1>
+        <p class="intro">A trophy guide and personal checklist for Leonida.</p>
+      </div>
+      <div class="coordinates" aria-hidden="true">LEONIDA <span>✦</span> VICE CITY</div>
+    </section>
+    <section class="progress" aria-label="Trophy progress">
+      <div class="overall">
+        <div class="dial" id="dial"><span id="percent">0%</span></div>
+        <div><p class="eyebrow">TOTAL PROGRESS</p><div id="earned" aria-live="polite"><strong>0</strong> / 55 earned</div></div>
+      </div>
+      <div class="grade-progress" id="grade-progress"></div>
+    </section>
+    <div class="layout">
+      <section id="checklist" aria-labelledby="checklist-title">
+        <div class="list-heading"><h2 id="checklist-title">Trophy checklist</h2><div class="list-tools"><details class="backup"><summary>Progress file</summary><div class="backup-menu"><button id="export-progress" type="button">Export JSON</button><button id="import-progress" type="button">Import JSON</button></div></details><output id="result-count"></output></div></div>
+        <input id="import-file" type="file" accept="application/json,.json" hidden>
+        <p id="backup-status" class="backup-status" aria-live="polite"></p>
+        <div class="filter-panel">
+          <div id="grades" class="grades" role="group" aria-label="Filter by grade"></div>
+          <div class="filters">
+            <label class="search"><svg aria-hidden="true"><use href="#search-icon"/></svg><input id="query" type="search" placeholder="Search trophies…" aria-label="Search trophies"></label>
+            <select id="kind" aria-label="Filter by kind"><option value="all">All kinds</option><option value="story">Story</option><option value="completion">Completion</option><option value="collectible">Collectible</option><option value="activity">Activity</option><option value="misc">Misc</option></select>
+            <select id="status" aria-label="Filter by status"><option value="all">Any status</option><option value="unearned">Unearned</option><option value="earned">Earned</option></select>
+          </div>
+        </div>
+        <div id="trophies"><p>Loading the trophy list…</p></div>
+      </section>
+      <aside id="roadmap" aria-labelledby="roadmap-title">
+        <div class="road-top"><svg aria-hidden="true"><use href="#cup"/></svg><h2 id="roadmap-title">Platinum roadmap</h2></div>
+        <div class="estimates"><div><strong>~200h</strong><span>EST. TIME</span></div><div><strong>4/10</strong><span>EST. DIFFICULTY</span></div></div>
+        <ol class="route">
+          <li><strong>Play the story</strong><p>Make a separate manual save at the start of each chapter. There is no mission replay.</p></li>
+          <li><strong>Clean up Leonida</strong><p>Finish side missions, activities and collectibles. Group stops by area to cut down on travel.</p></li>
+          <li><strong>Push to 100%</strong><p>Use the in-game completion tracker to find outstanding objectives, then check for any remaining trophies.</p></li>
+        </ol>
+        <div class="save-note"><strong>⚠ &nbsp; Chapter 1 checkpoint</strong><p>Use the chapter’s meditation spot before advancing.</p><button type="button" id="checkpoint">Open missable trophy <span aria-hidden="true">↗</span></button></div>
+      </aside>
+    </div>
+    <footer>Vice Afterglow <span>·</span> Unofficial PS5 trophy guide</footer>
+  </main>
+  <dialog id="detail" aria-labelledby="detail-title">
+    <form method="dialog"><button class="close" aria-label="Close guide" autofocus>×</button></form>
+    <p class="eyebrow" id="detail-meta"></p>
+    <h2 id="detail-title"></h2>
+    <p id="detail-description"></p>
+    <div class="warning" id="warning" hidden>⚠ Missable · Keep a manual save before moving on.</div>
+    <h3>Unlock guide</h3>
+    <p id="detail-guide"></p>
+    <button id="detail-toggle" type="button"></button>
+  </dialog>
+</body>
+</html>
